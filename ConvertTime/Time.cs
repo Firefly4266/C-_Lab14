@@ -9,11 +9,16 @@ public class Time
         hour = hr;
         minute = min;
     }
-    public static explicit operator string(Time time)
+    public static explicit operator Time(string time)
     {
         char[] spaces = { ':' };
-        string[] elements = 
+        string[] elements = time.Split(spaces);
+        int hour = Convert.ToInt32(spaces[0]);
+        int minute = Convert.ToInt32(spaces[1]);
+        Time corrTime = new Time(hour, minute);
+        return corrTime;
     }
+
 
 }
    
