@@ -18,8 +18,10 @@ public class Time
         Time corrTime = new Time(hour, minute);
         return corrTime;
     }
-
-
+    public static implicit operator string(Time time)
+    {
+        return time.hour + ":" + time.minute;
+    }
 }
    
 
